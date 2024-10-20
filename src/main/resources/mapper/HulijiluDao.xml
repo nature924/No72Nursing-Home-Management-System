@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.HulijiluDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.HulijiluEntity" id="hulijiluMap">
+        <result property="laorenbianhao" column="laorenbianhao"/>
+        <result property="laorenxingming" column="laorenxingming"/>
+        <result property="laorenxingbie" column="laorenxingbie"/>
+        <result property="laorennianling" column="laorennianling"/>
+        <result property="fangjianhao" column="fangjianhao"/>
+        <result property="chuangweihao" column="chuangweihao"/>
+        <result property="xueya" column="xueya"/>
+        <result property="xinlv" column="xinlv"/>
+        <result property="tiwen" column="tiwen"/>
+        <result property="shangcesuocishu" column="shangcesuocishu"/>
+        <result property="chuangdangenghuanshijian" column="chuangdangenghuanshijian"/>
+        <result property="jiankangzhuangkuang" column="jiankangzhuangkuang"/>
+        <result property="yihugonghao" column="yihugonghao"/>
+        <result property="yihuxingming" column="yihuxingming"/>
+        <result property="yihudengji" column="yihudengji"/>
+        <result property="dengjishijian" column="dengjishijian"/>
+        <result property="huliqingkuang" column="huliqingkuang"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.HulijiluVO" >
+		SELECT * FROM hulijilu  hulijilu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.HulijiluVO" >
+		SELECT  hulijilu.* FROM hulijilu  hulijilu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.HulijiluView" >
+
+		SELECT  hulijilu.* FROM hulijilu  hulijilu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.HulijiluView" >
+		SELECT * FROM hulijilu  hulijilu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
